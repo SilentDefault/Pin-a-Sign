@@ -4,30 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pin-a-Sign</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        var x = document.getElementById("cPosition");
         function getLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    var {latitude, longitude} = pos.coords;
+                    $('#cPosition').html("Latitude: " + latitude +
+                        "<br>Longitude: " + longitude);
+                });
             } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+                $('#cPosition').html("Geolocation is not supported by this browser.");
             }
         }
 
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
-        }
+        $(document).ready(function () {
+            getLocation();
+        });
     </script>
 </head>
 
 <body>
     <p id="cPosition"></p>
-    <script>
-        getLocation();
-    </script>
 </body>
 
 </html>
