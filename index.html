@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pin-a-Sign</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         var x = document.getElementById("cPosition");
         function getLocation() {
@@ -20,14 +21,14 @@
             x.innerHTML = "Latitude: " + position.coords.latitude +
                 "<br>Longitude: " + position.coords.longitude;
         }
+        $(dcoment).ready(function () {
+            getLocation();
+        });
     </script>
 </head>
 
 <body>
     <p id="cPosition"></p>
-    <script>
-        getLocation();
-    </script>
 </body>
 
 </html>
