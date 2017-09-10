@@ -8,20 +8,19 @@
     <title>Pin-a-Sign</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        var x = document.getElementById("cPosition");
         function getLocation() {
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(function (pos) {
+                    var {latitude, longitude} = pos.coords;
+                    $('#cPosition').html("Latitude: " + latitude +
+                        "<br>Longitude: " + longitude);
+                });
             } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
+                $('#cPosition').html("Geolocation is not supported by this browser.");
             }
         }
 
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude +
-                "<br>Longitude: " + position.coords.longitude;
-        }
-        $(dcoment).ready(function () {
+        $(document).ready(function () {
             getLocation();
         });
     </script>
