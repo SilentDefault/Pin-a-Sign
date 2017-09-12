@@ -1,46 +1,64 @@
 <!DOCTYPE html>
-<html class="js no-touchevents" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pin a Sign</title>
-    <link async rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,600,300italic,600italic" rel="stylesheet" type="text/css">
-    <!-- <link rel="manifest" href="./manifest.json"> -->
-    <meta name="theme-color" content="#29BDBB">
-    <link rel="icon" sizes="192x192" href="./192.png">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Silent*">
+
+  <title>Pin-a-Sign</title>
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+  <link rel="manifest" href="/img/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="/vendor/jquery-3.2.1.min.js"></script>
+  <script src="/vendor/dexie.min.js"></script>
+  <script src="/vendor/moment.min.js"></script>
+  <script src="/vendor/sizzle.min.js"></script>
+  <link rel="stylesheet/less" type="text/css" href="/less/smeargle.less" />
+  <script src="/vendor/less.min.js"></script>
+  <script src="/js/pichu.js"></script>
 </head>
 
 <body>
-    <header>
-        <div class="content">
-            <h3>Arrivals</h3>
-        </div>
-    </header>
-    <div class="container">
-        <div id="main" class="content">
-            <ul class="arrivals-list" data-bind="foreach: arrivals">
-                <li class="item">
-                    <span class="title" data-bind="html: title"></span>
-                    <span class="status" data-bind="html: status"></span>
-                    <span class="time" data-bind="html: time"></span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script>
-        console.log('getsis');
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js').then(function (registration) {
-                // Registration was successful
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }).catch(function (err) {
-                // registration failed :(
-                console.log('ServiceWorker registration failed: ', err);
-            });
-        }
-    </script>
+  <signs>
+
+    <sign>
+        <h6 content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
+            veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
+        </h6>
+        <date>
+          2017-09-09
+        </date>
+      <date>
+        
+      </date>
+    </sign>
+
+  </signs>
+
+  <editor>
+    <textarea placeholder="Turn On your GPS" rows="5" maxlength="255"></textarea>
+    <label hidden> 0/255</label>
+    <button disabled>Pin!</button>
+
+  </editor>
 </body>
 
 </html>
