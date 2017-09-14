@@ -8,7 +8,7 @@ var frases = [
     "Ve y descubre las señales puestas por otros Signalers, con precaucion", //4
     "Esto es una Beta, por ahora ;)", //5
     "Si te falla la app, puedes enviarme un mensaje~", //6
-    "Los Signaler's Tips cambian aleatoriamente, junto con la actualizacion de los datos GPS", //7
+    "Los Signaler's Tips cambian junto con la actualizacion de los datos GPS", //7
     "Inteligente, no? ;)", //8
     "Im fine :')"
 ];
