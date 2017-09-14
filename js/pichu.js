@@ -1,7 +1,4 @@
-var pos = {
-    latitude: 0, //25.9930588
-    longitude: 0 //-98.0756871
-};
+var pos = null;
 var server = 'http://mask.odacode.com';
 var frases = [
     "El(la) nunca volverá :'c", //0
@@ -121,8 +118,7 @@ $(window).resize(function () {
 });
 
 function success(position) {
-    pos.latitude = position.coords.latitude;
-    pos.longitude = position.coords.longitude;
+    pos = position.coords;
     $('textarea').attr('placeholder', `Lat: ${pos.latitude}
 Lon: ${pos.longitude}
 Signaler's Tips:
@@ -130,29 +126,31 @@ Signaler's Tips:
 };
 
 function error(err) {
+    console.log(err);
     $('textarea').attr('placeholder', `Lat: -error-
 Lon: -error-`);
 };
 
-navigator.geolocation.watchPosition(success, error, {
-    timeout: 1000
-});
-
+if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(success, error, {
+        timeout: 15000,
+        enableHighAccuracy: true
+    });
+}
+else {
+    $('textarea').attr('placeholder', `Perdona`);
+}
 
 function workOnLine() {
-    console.log("You are online");
     $('offline').css('z-index', '-1');
-    $('textarea').removeAttr('disabled').keyup();
+    $('textarea').removeAttr('disabled');
     eleResize();
 }
 
 function workOffLine() {
-    console.log("You are offline");
     $('offline').css('z-index', '1');
     $('signs').height($(document).height() - ($('editor').height() + $('offline').height()));
     $('offline').css('bottom', $('editor').height() + 'px');
-    $('textarea').attr('disabled', '');
-    $('button').attr('disabled', '');
 }
 
 window.addEventListener('online', function (e) {
