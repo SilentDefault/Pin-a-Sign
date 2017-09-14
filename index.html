@@ -28,85 +28,14 @@
   <meta name="msapplication-TileColor" content="#74A4E4">
   <meta name="msapplication-TileImage" content="./img/icon-144x144.png">
   <meta name="theme-color" content="#74A4E4">
-  <link  rel="stylesheet" type="text/css" href="./css/smeargle.css">
+  <link rel="stylesheet" type="text/css" href="./css/smeargle.css">
   <script src="./vendor/jquery-3.2.1.min.js"></script>
-  <script src="./vendor/dexie.min.js"></script>
-  <script src="./vendor/moment.min.js"></script>
+  <script src="./js/idb.js"></script>
   <script src="./js/pichu.js"></script>
 </head>
 
 <body>
   <signs>
-    <sign>
-      <h content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 1 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 2 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 3 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 4 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 5 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
-    <sign>
-      <h 6 content>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, debitis modi eos voluptates optio magni aliquam omnis
-        veniam pariatur suscipit alias assumenda sint aut earum placeat fugiat totam consectetur dolorem.
-      </h>
-      <date>
-        2017-09-09
-      </date>
-    </sign>
-
   </signs>
   <offline>
     Offline: solo mostrando tus letreros.
@@ -114,7 +43,7 @@
   <editor>
     <textarea placeholder="Turn On your GPS" rows="5" maxlength="255"></textarea>
     <label hidden> 0/255</label>
-    <button disabled>Pin!</button>
+    <button disabled onclick="createSign();">Pin!</button>
 
   </editor>
 </body>
