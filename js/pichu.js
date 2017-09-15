@@ -86,7 +86,7 @@ function createSign() {//create sign
 function renderPost(p) {
     $('signs').empty();
     $.each(p, function (i, p) {
-        if (getDistanceFromLatLonInKm(p.latitude, p.longitude) < 0.001) {
+        if (getDistanceFromLatLonInKm(p.latitude, p.longitude) < 0.01) {
             let d = new Date(p.date);
             $('signs').append(`
                 <sign d${p.ID}>
